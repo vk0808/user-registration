@@ -25,7 +25,7 @@ namespace UserRegistration
             form.Form("Mobile Number (with country code)", form.REGEX_MOBILE, "E.g. 91 1234567890\n* Country code followed by space\n* 10 digit number");
 
             // Validate password
-            form.Form("Password", form.REGEX_PASSWORD, "* minimum 8 characters");
+            form.Form("Password", form.REGEX_PASSWORD, "* minimum 8 characters\n* at least 1 Upper Case");
         }
     }
 }
