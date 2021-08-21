@@ -31,5 +31,19 @@ namespace UserRegistration
                 }
             }
         }
+
+        // sample email validator
+        public void EmailValidator(string field_value, string REGEX)
+        {           
+            bool flag = (Regex.IsMatch(field_value, REGEX));
+            if (flag == false)
+            {
+                Console.WriteLine($"Invalid email {field_value}\n");
+            }
+            else
+            {
+                Console.WriteLine($"Valid email {field_value}\n");
+            }
+        }
     }
 }
