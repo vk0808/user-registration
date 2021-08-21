@@ -12,8 +12,11 @@ namespace UserRegistration
             // Object instantisation
             FormValidate form = new FormValidate();
 
-            
-            form.Form("First Name", form.REGEX_NAME);
+            // Validate firstname
+            form.Form("First Name", form.REGEX_NAME, "* first letter - Capital\n* minimum 3 characters");
+
+            // Validate lasstname
+            form.Form("Last Name", form.REGEX_NAME, "* first letter - Capital\n* minimum 3 characters");
         }
     }
 }

@@ -12,22 +12,19 @@ namespace UserRegistration
 
 
         // Default form validator
-        public void Form(string field, string REGEX)
+        public void Form(string field, string REGEX, string message)
         {
             bool flag = false;
-            Console.WriteLine($"Enter the {field}");
 
             while (!flag)
             {
+                Console.Write($"\nEnter the {field}: ");
                 string field_value = Console.ReadLine();
+    
                 flag = (Regex.IsMatch(field_value, REGEX));
-                if (flag == true)
+                if (flag == false)
                 {
-                    Console.WriteLine("Valid");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid, type again");
+                    Console.WriteLine(message + "\n");
                 }
             }
         }
