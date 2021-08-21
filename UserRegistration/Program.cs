@@ -20,6 +20,9 @@ namespace UserRegistration
             
             // Validate email
             form.Form("Email ID", form.REGEX_EMAIL, "E.g. abc.xyz@bl.co.in\n* needs 3 mandatory parts (abc, bl & co)\n* 2 optional(xyz & in)\n* precise @ and .positions");
+
+            // Validate mobile number
+            form.Form("Mobile Number (with country code)", form.REGEX_MOBILE, "E.g. 91 1234567890\n* Country code followed by space\n* 10 digit number");
         }
     }
 }
