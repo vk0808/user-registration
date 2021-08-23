@@ -82,5 +82,48 @@ namespace UnitTestProject
             //Assert
             Assert.AreEqual(expected, result);
         }
+
+
+        [TestMethod]
+        [DataRow(null)]
+        public void GivenNullValue_ShouldThrow_CustomException(string field)
+        {
+            try
+            {
+                //Arrange
+                bool expected = true;
+
+                //Act
+                bool result = validate.FormVal(field, validate.REGEX_NAME);
+
+                //Assert
+                Assert.AreEqual(expected, result);
+            }
+            catch (CustomException exception)
+            {
+                Assert.AreEqual("Field should not be null", exception.Message);
+            }
+        }
+
+        [TestMethod]
+        [DataRow("")]
+        public void GivenEmptyValue_ShouldThrow_CustomException(string field)
+        {
+            try
+            {
+                //Arrange
+                bool expected = true;
+
+                //Act
+                bool result = validate.FormVal(field, validate.REGEX_NAME);
+
+                //Assert
+                Assert.AreEqual(expected, result);
+            }
+            catch (CustomException exception)
+            {
+                Assert.AreEqual("Field should not be empty", exception.Message);
+            }
+        }
     }
 }

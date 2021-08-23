@@ -36,12 +36,24 @@ namespace UserRegistration
         // Test form validator
         public bool FormVal(string field_value, string REGEX)
         {
-            if (Regex.IsMatch(field_value, REGEX))
+            try
             {
-                return true;
-            }
+                if (field_value.Equals(string.Empty))
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_VALUE, "Field should not be empty");
+                }
+                if (Regex.IsMatch(field_value, REGEX))
+                {
+                    return true;
+                }
 
-            return false;
+                return false;
+            }
+            catch (NullReferenceException)
+            {
+                throw new CustomException(CustomException.ExceptionType.NULL_VALUE, "Field should not be null");
+
+            }           
         }
 
 
