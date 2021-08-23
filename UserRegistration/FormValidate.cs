@@ -23,7 +23,7 @@ namespace UserRegistration
             {
                 Console.Write($"\nEnter the {field}: ");
                 string field_value = Console.ReadLine();
-    
+
                 flag = (Regex.IsMatch(field_value, REGEX));
                 if (flag == false)
                 {
@@ -32,9 +32,22 @@ namespace UserRegistration
             }
         }
 
+
+        // Test form validator
+        public bool FormVal(string field_value, string REGEX)
+        {
+            if (Regex.IsMatch(field_value, REGEX))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
         // sample email validator
         public void EmailValidator(string field_value, string REGEX)
-        {           
+        {
             bool flag = (Regex.IsMatch(field_value, REGEX));
             if (flag == false)
             {
