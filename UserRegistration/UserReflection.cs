@@ -12,6 +12,7 @@ namespace UserRegistration
             Type type = typeof(FormValidate);
 
             // Display fully ClassName and ClassName
+            Console.WriteLine("Class and it's full name\n");
             Console.WriteLine($"{"Class Name: ", 15} {type.Name}");
             Console.WriteLine($"{"Full Name: ", 15} {type.FullName}");
             Console.WriteLine("-------------------------------------\n");
