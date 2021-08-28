@@ -6,7 +6,6 @@ namespace UserRegistration
     {
         static void InitiateForm() 
         {
-
             // Welcome message
             Console.WriteLine("User Registration\n");
 
@@ -27,8 +26,13 @@ namespace UserRegistration
 
             // Validate password
             form.Form("Password", form.REGEX_PASSWORD, "* minimum 8 characters\n* atleast 1 Upper Case\n* atleast 1 number\n* exactly 1 special character");
+        }
 
-
+        static void SampleEmail()
+        {
+            // Object instantisation
+            FormValidate form = new FormValidate();
+            
             // Validate sample email ids
             Console.WriteLine("\n\nSample email id validation\n------------------------\n");
             string[] emailIds = {
@@ -39,6 +43,7 @@ namespace UserRegistration
                 "abc@gmail.com.aa.au"
             };
 
+            // Loop through each email from array and validate
             foreach (var email in emailIds)
             {
                 form.EmailValidator(email, form.REGEX_EMAIL);
@@ -46,7 +51,9 @@ namespace UserRegistration
         }
         static void Main(string[] args)
         {
-            UserReflection.ReflectionTest();
+            InitiateForm();
+            //SampleEmail();
+            //UserReflection.ReflectionTest();
         }
     }
 }

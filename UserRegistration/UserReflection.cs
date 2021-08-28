@@ -30,7 +30,7 @@ namespace UserRegistration
             Console.WriteLine("-------------------------------------\n");
 
 
-            // Get properties
+            // Get propertiesf
             Console.WriteLine("Properties in FormValidate Class\n");
             PropertyInfo[] propertyInfo = type.GetProperties();
             

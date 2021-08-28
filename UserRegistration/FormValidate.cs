@@ -14,6 +14,10 @@ namespace UserRegistration
         public string REGEX_PASSWORD = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-])[a-zA-Z0-9!@#$%^&*()_+=-]{8,}$";
 
 
+        // Lambda expressions to Validate input values based on given REGEX patterns
+        public Func<string, string, bool> Validate = (name, VALID_REGEX) => Regex.IsMatch(name, VALID_REGEX);
+
+
         // Default form validator
         public void Form(string field, string REGEX, string message)
         {
@@ -24,7 +28,7 @@ namespace UserRegistration
                 Console.Write($"\nEnter the {field}: ");
                 string field_value = Console.ReadLine();
 
-                flag = (Regex.IsMatch(field_value, REGEX));
+                flag = Validate(field_value, REGEX);
                 if (flag == false)
                 {
                     Console.WriteLine(message + "\n");
